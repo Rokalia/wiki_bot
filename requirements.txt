@@ -2,3 +2,4 @@ chromadb
 datasets
 transformers
 sentence-transformers
+telebot
