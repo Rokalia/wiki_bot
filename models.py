@@ -1,7 +1,7 @@
 from sentence_transformers import SentenceTransformer, CrossEncoder, util
 from transformers import pipeline
 
-def get_models
+def get_models():
   retriver = SentenceTransformer(
       model_name_or_path="DiTy/bi-encoder-russian-msmarco",
       cache_folder="./hf_cache",
