@@ -18,3 +18,7 @@ def search_page(query: str, wiki, retriever, reranker, top_k=10):
   docs, urls = retrieve_results(wiki, retriever, query, top_k*10)
   id = get_reranked_result_id(reranker, query, docs,top_k)
   return docs[id], urls[id]
+
+def get_answer(qa, query, doc):
+  qa_response = qa(question = query, context = doc)
+  return qa_response['answer']
