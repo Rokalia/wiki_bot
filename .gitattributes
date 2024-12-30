@@ -9,3 +9,5 @@ hf_cache/models--DiTy--bi-encoder-russian-msmarco/blobs/9213783a33aa495a3c2d3791
 hf_cache/models--DiTy--bi-encoder-russian-msmarco/blobs/9bbecc17cabbcbd3112c14d6982b51403b264bfa filter=lfs diff=lfs merge=lfs -text
 hf_cache/models--DiTy--bi-encoder-russian-msmarco/blobs/f7640f94e81bb7f4f04daf1668850b38763a13d9 filter=lfs diff=lfs merge=lfs -text
 hf_cache/models--DiTy--bi-encoder-russian-msmarco/blobs/f789d99277496b282d19020415c5ba9ca79ac875 filter=lfs diff=lfs merge=lfs -text
+*.sqlite3 filter=lfs diff=lfs merge=lfs -text
+database/chroma.sqlite3 filter=lfs diff=lfs merge=lfs -text
