@@ -17,7 +17,7 @@ def get_models():
   
   qa = pipeline(
      task='question-answering',
-     model='timpal0l/mdeberta-v3-base-squad2'
+     model='timpal0l/mdeberta-v3-base-squad2',
      torch_dtype=torch.float16,
      use_safetensors=True,
   )
