@@ -5,7 +5,7 @@ import telebot
 retriever, reranker, qa = get_models()
 
 def wiki_search(query):
-  doc, url = search_page(query, wiki, retriever, reranker)
+  doc, url = search_page(query, retriever, reranker)
   summary = doc[:200]+'...'
   answer = get_answer_from_page(qa, query, doc)
   return f"{answer}\n{'='*10}\n{summary}\n{'='*10}\n{url}"
