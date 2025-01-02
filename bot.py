@@ -1,15 +1,13 @@
 from models import get_models
-from wiki_collection import get_wiki_collection
-from search import search_page, get_answer
+from search import search_page, get_answer_from_page
 import telebot
 
 retriever, reranker, qa = get_models()
-wiki = get_wiki_collection()
 
 def wiki_search(query):
   doc, url = search_page(query, wiki, retriever, reranker)
   summary = doc[:200]+'...'
-  answer = get_answer(qa, query, doc)
+  answer = get_answer_from_page(qa, query, doc)
   return f"{answer}\n{'='*10}\n{summary}\n{'='*10}\n{url}"
 
 BOT = telebot.TeleBot('7663049239:AAEts0Igzfkyttz4DVkHJd_HNIeYWcWXsqU')
