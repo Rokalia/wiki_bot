@@ -10,7 +10,7 @@ def wiki_search(query):
   answer = get_answer_from_page(qa, query, doc)
   return f"{answer}\n{'='*10}\n{summary}\n{'='*10}\n{url}"
 
-BOT = telebot.TeleBot('7663049239:AAEts0Igzfkyttz4DVkHJd_HNIeYWcWXsqU')
+BOT = telebot.TeleBot('токен')
 
 @BOT.message_handler(content_types=['text'])
 def get_text_messages(message):
