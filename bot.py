@@ -12,7 +12,7 @@ def wiki_search(query):
 
 BOT = telebot.TeleBot('7663049239:AAEts0Igzfkyttz4DVkHJd_HNIeYWcWXsqU')
 
-@bot.message_handler(content_types=['text'])
+@BOT.message_handler(content_types=['text'])
 def get_text_messages(message):
     if message.text == "/start":
         BOT.send_message(message.from_user.id, "Здравствуйте, я WikiBot. Что вы хотите узнать?")
