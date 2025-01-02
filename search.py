@@ -42,8 +42,8 @@ def get_reranked_result_id(reranker, query, docs, top_k):
     reranked_results = reranker.rank(query=query,documents= docs, top_k=top_k)
     return reranked_results[0]['corpus_id']
 
-def search_page(query: str, wiki, retriever, reranker, top_k=10):
-  docs, urls = retrieve_results(wiki, retriever, query, top_k*10)
+def search_page(query: str, retriever, reranker, top_k=10):
+  docs, urls = retrieve_results(query, retriever, top_k*10)
   id = get_reranked_result_id(reranker, query, docs,top_k)
   return docs[id], urls[id]
 
