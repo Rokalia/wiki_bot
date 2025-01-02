@@ -2,12 +2,14 @@ import wikipedia
 import chromadb
 
 CLIENT = chromadb.PersistentClient(path="./database")
-wiki = CLIENT.create_collection(
-    name="wiki_collection",
-    metadata={
-        "hnsw:space": "cosine"
-    }
-)
+if CLIENT.count_collections() == 0:
+    wiki = CLIENT.create_collection(
+        name="wiki_collection",
+        metadata={
+            "hnsw:space": "cosine"
+        }
+    )
+
 wikipedia.set_lang('ru')
 
 def create_collection(query: str, retriever):
