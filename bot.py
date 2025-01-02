@@ -22,5 +22,5 @@ def get_text_messages(message):
         answer = wiki_search(query)
         BOT.send_message(message.from_user.id, answer)
 
-if __name__=="__maint__":
+if __name__=="__main__":
   BOT.polling(none_stop=True, interval=0)
