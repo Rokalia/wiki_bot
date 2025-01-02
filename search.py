@@ -22,7 +22,7 @@ def create_collection(query: str, retriever):
     return collection
 
 def retrieve_results(query: str, retriever, top_k):
-    collection = create_collection(query)
+    collection = create_collection(query, retriever)
     cols = ['documents', 'uris']
     if top_k > collection.count():
         top_k = collection.count()
@@ -44,7 +44,7 @@ def get_reranked_result_id(reranker, query, docs, top_k):
 
 def search_page(query: str, retriever, reranker, top_k=10):
   docs, urls = retrieve_results(query, retriever, top_k*10)
-  id = get_reranked_result_id(reranker, query, docs,top_k)
+  id = get_reranked_result_id(reranker, query, docs, top_k)
   return docs[id], urls[id]
 
 def get_answer_from_page(qa, query, doc):
