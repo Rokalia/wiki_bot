@@ -1,5 +1,6 @@
 chromadb
-datasets
+torch
 transformers
 sentence-transformers
+wikipedia
 telebot
