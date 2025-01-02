@@ -26,7 +26,7 @@ def retrieve_results(query: str, retriever, top_k):
     cols = ['documents', 'uris']
     if top_k > collection.count():
         top_k = collection.count()
-    q_embs = RETRIEVER.encode(query).tolist()
+    q_embs = retriever.encode(query).tolist()
     retrieved_results = collection.query(
             query_embeddings = q_embs,
             n_results = top_k,
