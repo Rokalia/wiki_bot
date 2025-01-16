@@ -26,7 +26,7 @@ def create_collection(query: str, retriever):
         embs.append(retriever.encode(p.content))
         i+=1
         ids.append(f"id{i}")
-        collection.add( documents= docs, uris = urls, embeddings=embs, ids=ids)
+    collection.add( documents= docs, uris = urls, embeddings=embs, ids=ids)
     return collection
 
 def retrieve_results(query: str, retriever, top_k):
